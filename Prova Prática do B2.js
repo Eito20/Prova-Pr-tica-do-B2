@@ -1,30 +1,40 @@
-// 1. Array of colors from the w3schools page (manually added for demonstration)
 const colors = [
-    'aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure', 'beige', 
-    'bisque', 'black', 'blanchedalmond', 'blue', 'blueviolet', 'brown',
-    'burlywood', 'cadetblue', 'chartreuse'
-    // ... more colors would be here in real implementation
-  ].map(color => color.toLowerCase())
+    'aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blue',
+    'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk',
+    'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgreen', 'darkkhaki', 'darkmagenta',
+    'darkolivegreen', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray',
+    'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dodgerblue', 'firebrick', 'floralwhite',
+    'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'gray', 'green', 'greenyellow', 'honeydew',
+    'hotpink', 'indianred', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen', 'lemonchiffon',
+    'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon',
+    'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow', 'lime', 'limegreen', 'linen',
+    'magenta', 'maroon', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen',
+    'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream',
+    'mistyrose', 'moccasin', 'navajowhite', 'navy', 'oldlace', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid',
+    'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'pink', 'plum',
+    'powderblue', 'purple', 'rebeccapurple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown',
+    'seagreen', 'seashell', 'sienna', 'silver', 'skyblue', 'slateblue', 'slategray', 'snow', 'springgreen', 'steelblue',
+    'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'white', 'whitesmoke', 'yellow', 'yellowgreen',
+    'yellowgreen', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue'
+  ];
   
-  // 2. Function to select 10 random colors
   function selectTenRandomColors(allColors) {
-    const shuffled = [...allColors]
+    const shuffled = [...allColors];
     for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    return shuffled.slice(0, 10)
+    return shuffled.slice(0, 10);
   }
   
-  // 3. Function to select one random color from the ten
   function selectOneRandomColor(tenColors) {
-    const randomIndex = Math.floor(Math.random() * tenColors.length)
-    return tenColors[randomIndex]
+    const randomIndex = Math.floor(Math.random() * tenColors.length);
+    return tenColors[randomIndex];
   }
   
-  // Execute the functions
-  const tenRandomColors = selectTenRandomColors(colors)
-  console.log('Ten random colors:', tenRandomColors)
+  console.log('Total number of colors:', colors.length);
+  const tenRandomColors = selectTenRandomColors(colors);
+  console.log('Ten random colors:', tenRandomColors);
   
-  const finalColor = selectOneRandomColor(tenRandomColors)
-  console.log('Final selected color:', finalColor)
+  const finalColor = selectOneRandomColor(tenRandomColors);
+  console.log('Final selected color:', finalColor);
